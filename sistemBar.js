@@ -5,30 +5,54 @@ var Bar = /** @class */ (function () {
         this.nombre = nom;
         this.capacidad = cap;
     }
+    Bar.prototype.setnombre = function (nom) {
+        this.nombre = nom;
+    };
+    Bar.prototype.getnombre = function () {
+        return this.nombre;
+    };
     return Bar;
 }());
 exports.Bar = Bar;
-var barman = /** @class */ (function () {
-    function barman(nom, ape) {
+var Barman = /** @class */ (function () {
+    function Barman(nom, ape) {
         this.nombre = nom;
         this.apellido = ape;
     }
-    return barman;
+    Barman.prototype.setnombre = function (nom) {
+        this.nombre = nom;
+    };
+    Barman.prototype.getnombre = function () {
+        return this.nombre;
+    };
+    return Barman;
 }());
-exports.barman = barman;
-var trago = /** @class */ (function () {
-    function trago(nom, col, can) {
+exports.Barman = Barman;
+var Trago = /** @class */ (function () {
+    function Trago(nom, col, can) {
         this.nombre = nom;
         this.color = col;
         this.cantidad = can;
     }
-    return trago;
+    Trago.prototype.setnombre = function (nom) {
+        this.nombre = nom;
+    };
+    Trago.prototype.getnombre = function () {
+        return this.nombre;
+    };
+    return Trago;
 }());
-exports.trago = trago;
+exports.Trago = Trago;
 var bar1 = new Bar("nueva era2", 500);
 var bar2 = new Bar("el patio", 250);
-var barman1 = new barman("ale", "estrada");
-var trago1 = new trago("bebida", "negro", 1);
+var barman1 = new Barman("ale", "estrada");
+var trago1 = new Trago("bebida", "negro", 1);
+bar1.setnombre("el pueblo");
+barman1.setnombre("infiltrado");
+trago1.setnombre("muy caro");
+console.log(bar1.getnombre());
+console.log(barman1.getnombre());
+console.log(trago1.getnombre());
 console.log(bar1);
 console.log(bar2);
 console.log(barman1);
